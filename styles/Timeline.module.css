@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+  font-family: 'aquire';
+  src: url('/fonts/aquire-font/AquireBold-8Ma60.otf') format('woff2'),
+       url('/fonts/aquire-font/AquireLight-YzE0o.otf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.design-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  font-family: aquire;
+  z-index: -1;
+  margin-top: 10vh;
+}
+.design-section h1{
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.design {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline {
+  width: 80%;
+  height: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline-content {
+  padding: 1px;
+  background: #a1bdcf21;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  padding: 1.75rem;
+  transition: 0.4s ease;
+  margin: 1rem;
+  border-radius: 6px;
+  clip-path:polygon(
+  0px 36px,36px 0px,100% 0px,100% calc(100% - 36px),calc(100% - 36px) 100%,0px 100%,0px 36px);
+  width: 100%;
+  backdrop-filter: blur(3px);
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Light border */
+}
+.timeline-content ul li{
+  list-style: disc;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: #2e42509a;
+}
+.timeline-component {
+  margin: 0px 20px 20px 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .design-section{
+    top: 190vh;
+  }
+  .timeline {
+    display: grid;
+    grid-template-columns: 1fr 3px 1fr;
+  }
+  .timeline-middle {
+    position: relative;
+    background-image: linear-gradient(45deg, #b0c9da, #52768e, #2991d7);
+    width: 3px;
+    height: 100%;
+  }
+  .main-middle {
+    opacity: 0;
+  }
+  .timeline-circle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-image: linear-gradient(45deg, #b0c9da, #52768e, #2991d7);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}

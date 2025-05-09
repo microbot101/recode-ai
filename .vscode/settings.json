@@ -1,0 +1,7 @@
+{
+    "editor.find.cursorMoveOnType": true,
+    "editor.insertSpaces": true,
+    "editor.suggest.insertMode": "insert",
+    "editor.comments.insertSpace": true,
+    "editor.autoClosingOvertype": "never"
+}

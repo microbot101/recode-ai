@@ -5,6 +5,14 @@
   --foreground: #171717;
 }
 
+@font-face {
+  font-family: 'aquire';
+  src: url('/fonts/aquire-font/AquireBold-8Ma60.otf') format('woff2'),
+       url('/fonts/aquire-font/AquireLight-YzE0o.otf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -14,13 +22,314 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #000000;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: aquire, Arial, Helvetica, sans-serif;
 }
+
+/* styles/globals.css */
+
+
+/* General navbar styling */
+.navbar {
+  width: 100vw;
+  position: fixed;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #ffffffb5;
+  backdrop-filter: blur(3px);
+  color: rgb(0, 0, 0);
+  font-family: aquire, Arial, sans-serif;
+  z-index: 100;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  position: absolute;
+  left: 0;
+  color: #000000;
+  width: 100vw;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.nav-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+
+.nav-links a {
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.nav-links a:hover {
+  border-radius: 5px;
+}
+
+/* banner css */
+.banner{
+  padding-top: 20vh;
+  width: 100vw;
+  height:80vh;
+  display: grid;
+  text-align: center;
+  align-items: center;
+  place-content: center;
+}
+.bn-h1{
+  width: 100%;
+  font-weight: 2rem;
+  font-size: 1.5rem;
+}
+.bn-logo{
+  width: 100%;
+  max-width: 1000px;
+  z-index: -1;
+}
+.bn-bg{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0.9;
+}
+
+/* Gradient overlay on the image */
+.image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgb(255, 255, 255) 10%,rgb(255, 255, 255) 10%,
+   rgb(255, 255, 255) 20%, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+  border-radius: 10px; /* Optional: rounds the edges of the gradient */
+  pointer-events: none;  /* Prevents the overlay from interfering with clicking on the image */
+}
+
+/* Glassmorphism Button Style */
+.glassmorphism-button {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background: rgba(58, 58, 65, 0.046); /* Semi-transparent white */
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Light border */
+  padding: 12px 24px;
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  backdrop-filter: blur(3px); /* Frosted glass effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: all 0.3s ease;
+  clip-path:polygon(
+  0px 36px,36px 0px,100% 0px,100% calc(100% - 36px),calc(100% - 36px) 100%,0px 100%,0px 36px);
+  width: 70vw;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+/*about */
+.about{
+  display: grid;
+  width: 100%;
+  margin-top: 30vh;
+  color: black;
+  text-align: center;
+  justify-content: center;
+  place-items: center;
+  padding: 10vw
+}
+.about p{
+  color: #00000092;
+  font-size: 1rem;
+}
+.about h1{
+  font-size: 2rem;
+}
+.about .video-container{
+  width: 100%;
+  overflow: hidden; 
+  clip-path:polygon(
+  0px 36px,36px 0px,100% 0px,100% calc(100% - 36px),calc(100% - 36px) 100%,0px 100%,0px 36px); 
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  margin-top: 5vh;
+}
+
+
+
+/* gradient balls */
+.gradient-circle {
+  position: fixed;
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(80px);
+  opacity: 0.5;
+}
+
+.top-left {
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  left: -100px;
+  background: radial-gradient(circle, #b0c9da, rgb(44, 102, 194));
+}
+
+.bottom-right {
+  width: 300px;
+  height: 300px;
+  bottom: -80px;
+  right: -80px;
+  background: radial-gradient(circle, #b0c9da, rgb(44, 102, 194));
+}
+
+.footer {
+  background-color: #b0c9da65;
+  color: #2b343a;
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  margin-top: 10vh;
+  width: 100%;
+  backdrop-filter: blur(3px);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-link {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #0b0f197d; /* Light color for links */
+  font-weight: 500;
+}
+
+.footer-link:hover {
+  color: #3B82F6; /* Hover color */
+  text-decoration: underline;
+}
+
+.footer p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+@media (max-width: 768){ 
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+
+/* Optional: tweak size on smaller screens */
+@media (max-width: 768px) {
+  .ab-img {
+    max-width: 500px;
+     top: 90vh;
+  }
+  
+  .about h1{
+    font-size: 1.5rem;
+  }
+  .about p{
+    color: #00000092;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ab-img {
+    max-width: 450px;
+  }
+}
+
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    width: 100%;
+    text-align: center;
+    top: 10.5vh;
+    background-color: #ffffffb5;
+    backdrop-filter: blur(5x);
+  }
+
+  .nav-links.active {
+    display: block;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+/* Loading gif */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Make sure it appears above all content */
+}
+
+
+
+
+
